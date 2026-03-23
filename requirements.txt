@@ -6,3 +6,5 @@ opencv-python-headless>=4.8.0
 # For converting speech_emotion_model.h5 → TF.js (run once)
 tensorflowjs>=4.0.0
 keras>=3.0.0
+#
+gunicorn
