@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>EmotionSense AI</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --white: #ffffff;
+  --off: #f7f8fc;
+  --navy: #0f1f3d;
+  --navy2: #1a3460;
+  --blue: #2563eb;
+  --blue-soft: #eff4ff;
+  --teal: #0d9488;
+  --teal-soft: #f0fdfa;
+  --text: #0f172a;
+  --sub: #64748b;
+  --line: #e2e8f0;
+  --shadow: 0 1px 3px rgba(15,31,61,.06), 0 8px 32px rgba(15,31,61,.08);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--white);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAV */
+nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px; height: 64px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(12px);
+  position: sticky; top: 0; z-index: 100;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 700; font-size: 16px; color: var(--navy);
+  letter-spacing: -.01em;
+}
+.logo-mark {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: linear-gradient(135deg, var(--navy), var(--blue));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; color: white;
+}
+.nav-badge {
+  font-size: 11px; font-weight: 600;
+  color: var(--blue); background: var(--blue-soft);
+  padding: 4px 12px; border-radius: 20px;
+  letter-spacing: .02em;
+}
+
+/* HERO */
+main {
+  flex: 1;
+  display: flex; align-items: center; justify-content: center;
+  padding: 80px 48px;
+}
+.hero {
+  max-width: 680px; text-align: center;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 600; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--teal);
+  margin-bottom: 28px;
+}
+.eyebrow-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--teal); animation: blink 2s ease-in-out infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 1.05; letter-spacing: -.02em;
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+h1 em {
+  font-style: italic;
+  background: linear-gradient(135deg, var(--blue), var(--teal));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-desc {
+  font-size: 18px; line-height: 1.7; color: var(--sub);
+  margin-bottom: 48px; font-weight: 400;
+}
+
+/* CHANNELS */
+.channels {
+  display: flex; gap: 12px; justify-content: center;
+  margin-bottom: 48px; flex-wrap: wrap;
+}
+.channel {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 20px; border-radius: 12px;
+  border: 1px solid var(--line); background: var(--off);
+  font-size: 13px; font-weight: 500; color: var(--navy);
+}
+.ch-icon {
+  width: 32px; height: 32px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; font-size: 16px;
+}
+.ch-face { background: #eff4ff; }
+.ch-voice { background: #f0fdfa; }
+.ch-fusion { background: #fdf4ff; }
+.ch-label { font-weight: 600; }
+.ch-sub { font-size: 11px; color: var(--sub); font-weight: 400; }
+.ch-plus { color: var(--line); font-size: 20px; font-weight: 300; align-self: center; }
+
+/* CTA */
+.cta-group { display: flex; gap: 12px; justify-content: center; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 32px; border-radius: 10px;
+  background: var(--navy); color: white;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600; font-size: 15px;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: background .2s, transform .15s, box-shadow .2s;
+  box-shadow: 0 2px 8px rgba(15,31,61,.2), 0 1px 2px rgba(15,31,61,.1);
+}
+.btn-primary:hover { background: var(--navy2); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(15,31,61,.25); }
+.btn-primary svg { flex-shrink:0; }
+
+/* FOOTER */
+footer {
+  padding: 20px 48px; border-top: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 12px; color: var(--sub);
+}
+.footer-dots { display:flex; gap:6px; }
+.fd { width:6px;height:6px;border-radius:50%;background:var(--line); }
+.fd.on { background:var(--teal); }
+
+@media(max-width:600px){
+  nav{padding:0 20px}
+  main{padding:48px 20px}
+  .channels{flex-direction:column;align-items:center}
+  .ch-plus{display:none}
+  footer{padding:16px 20px;flex-direction:column;gap:8px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <div class="logo-mark">🧠</div>
+    EmotionSense AI
+  </div>
+  <div class="nav-badge">Multimodal · v2.0</div>
+</nav>
+
+<main>
+  <div class="hero">
+    <div class="hero-eyebrow">
+      <span class="eyebrow-dot"></span>
+      Neural Emotion Analysis
+    </div>
+
+    <h1>Understand emotion<br>through <em>face & voice</em></h1>
+
+    <p class="hero-desc">
+      A dual-channel AI that reads facial expressions via CNN and voice pitch via YIN detection — then fuses both signals into one confident verdict.
+    </p>
+
+    <div class="channels">
+      <div class="channel">
+        <div class="ch-icon ch-face">🎥</div>
+        <div>
+          <div class="ch-label">Face CNN</div>
+          <div class="ch-sub">32×32 · CLAHE · 7 classes</div>
+        </div>
+      </div>
+      <div class="ch-plus">+</div>
+      <div class="channel">
+        <div class="ch-icon ch-voice">🎤</div>
+        <div>
+          <div class="ch-label">YIN Pitch</div>
+          <div class="ch-sub">Pitch · Energy · ZCR</div>
+        </div>
+      </div>
+      <div class="ch-plus">=</div>
+      <div class="channel">
+        <div class="ch-icon ch-fusion">🧠</div>
+        <div>
+          <div class="ch-label">AI Verdict</div>
+          <div class="ch-sub">60% face · 40% voice</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-group">
+      <a href="detect.html" class="btn-primary">
+        Start Analysis
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span>EmotionSense AI · Fixed CNN (32×32) · YIN Pitch Detector</span>
+  <div class="footer-dots">
+    <div class="fd on"></div>
+    <div class="fd on"></div>
+    <div class="fd"></div>
+  </div>
+</footer>
+
+</body>
+</html>
