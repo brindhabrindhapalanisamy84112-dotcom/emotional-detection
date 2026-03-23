@@ -1,10 +1,4 @@
-# Core (required)
-flask>=2.3.0
-numpy>=1.24.0
-opencv-python-headless>=4.8.0
-
-# For converting speech_emotion_model.h5 → TF.js (run once)
-tensorflowjs>=4.0.0
-keras>=3.0.0
-#
+flask
+numpy
+opencv-python-headless
 gunicorn
